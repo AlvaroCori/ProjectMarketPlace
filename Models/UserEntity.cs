@@ -1,40 +1,42 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace ProjectMarketPlace.Models
 {
-    [Table("User")]
+    [Table("USERP")]
+    [DataContract(IsReference = true)]
     public class UserEntity
     {
         [Key]
         [Column("ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        private long Id
+        public int Id
         { get; set; }
         [MaxLength(100)]
         [Column("USER_CODE")]
-        private string UserCode
+        public string? UserCode
         { get; set; }
         [MaxLength(100)]
         [Column("NAME")]
-        private string Name
+        public string? Name
         { get; set; }
         [MaxLength(100)]
         [Column("LAST_NAME")]
-        private string LastName
+        public string? LastName
         { get; set; }
         [MaxLength(50)]
         [Column("EMAIL")]
-        private string Email
+        public string? Email
         { get; set; }
         
         [MaxLength(50)]
         [Column("PHONE_NUMBER")]
-        private string PhoneNumber
+        public string? PhoneNumber
         { get; set; }
-        [MaxLength(100)]
+        //[MaxLength(1000)]
         [Column("PASSWORD")]
-        private string Password
+        public string? Password
         { get; set; }
     }
 }

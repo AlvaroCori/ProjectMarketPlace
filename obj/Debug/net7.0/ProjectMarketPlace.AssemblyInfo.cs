@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjectMarketPlace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a55d54578b46cc7a1fa95b9c1075c6921d2ee94")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjectMarketPlace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjectMarketPlace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

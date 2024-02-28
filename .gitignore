@@ -13,5 +13,6 @@ obj/
 
 ## Carpetas de respaldo
 _UpgradeReport_Files/
+Migrations/
 Backup*/
 UpgradeLog*.XML
