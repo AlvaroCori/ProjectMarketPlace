@@ -42,6 +42,7 @@ namespace ProjectMarketPlace.Service
             var token = BuildToken("admin");
             var result = new LoginResponse()
             {
+                UserName = user.Name,
                 Token = token
             };
             return new BaseResponse<LoginResponse>(result);
@@ -65,7 +66,8 @@ namespace ProjectMarketPlace.Service
                 //new Claim(ClaimTypes.Role, "admin"),
                 new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString())
             };
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration?["Jwt.CustomAuthentication.SecretKey"]!));
+            var le1 = configuration["Jwt:CustomAuthentication:SecretKey"]!;
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:CustomAuthentication:SecretKey"]!));
             //var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("abcd"));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
             var expirationToken = DateTime.Now.AddMinutes(expiration);
@@ -80,6 +82,7 @@ namespace ProjectMarketPlace.Service
             );
             return new JwtSecurityTokenHandler().WriteToken(TokenDescriptor);
         }
+        
     }
 }
 
